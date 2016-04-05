@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background= "@drawable/red"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="xyz.valeev.numberguessing.VeteranActivity"
+    tools:showIn="@layout/activity_veteran">
+
+
+    <!-- INPUT WINDOW -->
+
+    <EditText
+        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:background="#FFFCD77A"
+        android:id="@+id/userInput"
+        android:inputType="number"
+        android:textStyle="bold"
+        android:textColor="#FFFF011A"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"/>
+    <!-- SUBMIT BUTTON -->
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:background="#FFFCD77A"
+        android:id="@+id/guess_button"
+        android:layout_alignParentTop="true"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:layout_below="@+id/userInput"
+        android:visibility="invisible"
+        android:onClick="onClickSubmitNumber"
+        android:text="@string/guess"/>
+
+    <!-- START NEW GAME BUTTON -->
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="145dp"
+        android:layout_alignParentTop="true"
+        android:layout_below="@+id/guess_button"
+        android:background="#ffb701"
+        android:id="@+id/start_button"
+        android:textSize="24sp"
+        android:text="@string/start"
+        android:onClick="onClickStartNewGame"
+        android:layout_centerHorizontal="true"/>
+    <!-- ATTEMPTS : -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/attempts"
+        android:id="@+id/textViewAttempts"
+        android:layout_below="@+id/start_button"
+        android:layout_alignEnd="@+id/userInput"
+        android:layout_marginTop="24dp" />
+    <!-- CURRENT INPUT : -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/current_input"
+        android:id="@+id/textView13"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/textViewAttemptNumber" />
+    <!-- NUMBER OF ATTEMPTS -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="0"
+        android:id="@+id/textViewAttemptNumber"
+        android:layout_alignBottom="@+id/textViewAttempts"
+        android:layout_toEndOf="@+id/textViewAttempts" />
+    <!-- CURRENT USER INPUT -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="NULL"
+        android:id="@+id/textViewInputValue"
+        android:layout_alignTop="@+id/textView13"
+        android:layout_toEndOf="@+id/textView13" />
+    <!-- PROMPT FIELD -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="GUESS 1-100, 7 ATTEMPTS"
+        android:textStyle="bold"
+        android:textSize="32sp"
+        android:id="@+id/textViewPrompt"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/textView13"
+        android:layout_centerHorizontal="true" />
+    <!-- MAIN MENU BUTTON -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back_to_main_menu"
+        android:id="@+id/buttonMenu"
+        android:layout_marginTop="29dp"
+        android:background="#fccb62"
+        android:layout_below="@+id/textViewPrompt"
+        android:onClick="onClickBackToMenu"
+        android:layout_centerHorizontal="true" />
+
+
+
+</RelativeLayout>
